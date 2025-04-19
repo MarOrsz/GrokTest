@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>>
 
 void process(std::vector<int>& data) {
     for (int i = 0; i <= data.size(); ++i) {
