@@ -12,6 +12,7 @@
       bool readNumbers(int max_size);
       const int* getNumbers() const { return numbers.get(); }
       int getSize() const { return size; }
+      void transferNumbers(FileProcessor& other);
 
   private:
       std::ifstream file;
