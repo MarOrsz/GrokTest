@@ -23,3 +23,20 @@
       }
       return true;
   }
+
+  void FileProcessor::transferNumbers(FileProcessor &other)
+  {
+    other.numbers = std::move(numbers);
+    other.size = size;
+
+    numbers = nullptr;
+    size = 0;
+
+  }
+
+  FileProcessor::FileProcessor(FileProcessor &copy)
+  {
+    copy.numbers = numbers;
+
+    
+  }
