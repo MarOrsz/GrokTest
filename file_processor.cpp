@@ -30,13 +30,5 @@
     other.size = size;
 
     numbers = nullptr;
-    size = 0;
-
-  }
-
-  FileProcessor::FileProcessor(FileProcessor &copy)
-  {
-    copy.numbers = numbers;
-
-    
+    other.size = 0;
   }

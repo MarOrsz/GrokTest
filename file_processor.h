@@ -6,7 +6,6 @@
   #include <string>
 
 
-class FileProcessor;
   class FileProcessor {
   public:
       explicit FileProcessor(const std::string& filename);
@@ -14,11 +13,7 @@ class FileProcessor;
       bool readNumbers(int max_size);
       const int* getNumbers() const { return numbers.get(); }
       int getSize() const { return size; }
-
       void transferNumbers(FileProcessor& other);
-
-      FileProcessor(FileProcessor& copy);
-
 
   private:
       std::ifstream file;
