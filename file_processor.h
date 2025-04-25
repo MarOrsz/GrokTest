@@ -14,6 +14,7 @@
       const int* getNumbers() const { return numbers.get(); }
       int getSize() const { return size; }
       void transferNumbers(FileProcessor& other);
+      void filterNumbers(int threshold);
 
   private:
       std::ifstream file;

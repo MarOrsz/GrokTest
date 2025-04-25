@@ -35,5 +35,17 @@
       
       std::cout <<"No of nanoseconds while transferring data by move:"<< dur.count()<<std::endl;
 
+
+      fp2.filterNumbers(10);
+
+      std::cout << "Filtered numbers" << std::endl;
+
+      for (int i = 0; i < fp2.getSize(); i++)
+      {
+        std::cout << fp2.getNumbers()[i] << std::endl;
+      }
+
+      
+
       return 0;
   }

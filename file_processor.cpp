@@ -1,5 +1,7 @@
 #include "file_processor.h"
   #include <iostream>
+  #include <algorithm>
+  #include <vector>
 
   FileProcessor::FileProcessor(const std::string& filename) : file(filename) {
       if (!file.is_open()) {
@@ -26,9 +28,19 @@
 
   void FileProcessor::transferNumbers(FileProcessor &other)
   {
-    other.numbers = std::move(numbers);
-    other.size = size;
+    numbers = std::move(other.numbers);
+    size = other.size;
 
-    numbers = nullptr;
+    other.numbers = nullptr;
     other.size = 0;
+  }
+
+  void FileProcessor::filterNumbers(int threshold)
+  {
+    if (size < 1)
+        return;
+
+    auto newEnd = std::remove_if(numbers.get(), numbers.get() + size, [threshold](int x){return x < threshold;});
+
+    size = *newEnd - 1;
   }
